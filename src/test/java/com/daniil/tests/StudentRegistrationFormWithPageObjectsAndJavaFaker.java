@@ -8,7 +8,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 @DisplayName("Тест пятого урока")
-public class StudentRegistrationFormWithPageObjectsAndJavaFaker {
+public class StudentRegistrationFormWithPageObjectsAndJavaFaker extends TestBase {
 
     RegistrationPage registrationPage = new RegistrationPage();
     Faker faker = new Faker();

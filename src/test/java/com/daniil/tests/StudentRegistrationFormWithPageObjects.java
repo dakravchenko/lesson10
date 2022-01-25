@@ -7,7 +7,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 @DisplayName("Тест пятого урока")
-public class StudentRegistrationFormWithPageObjects {
+public class StudentRegistrationFormWithPageObjects extends TestBase {
 
     RegistrationPage registrationPage = new RegistrationPage();
     String firstName = "Daniil";
