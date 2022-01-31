@@ -2,11 +2,16 @@ package com.daniil.tests;
 
 import com.codeborne.selenide.Configuration;
 import com.daniil.pages.RegistrationPage;
+import io.qameta.allure.*;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-@DisplayName("Тест пятого урока")
+@Owner("dakravchenko")
+@Feature("Registration")
+@Story("Регистрация")
+@DisplayName("Регистрация")
+@Severity(SeverityLevel.BLOCKER)
 public class StudentRegistrationFormWithPageObjects extends TestBase {
 
     RegistrationPage registrationPage = new RegistrationPage();
