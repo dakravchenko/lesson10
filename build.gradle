@@ -27,11 +27,9 @@ allure {
 
 dependencies {
     testImplementation(
-            "com.codeborne:selenide:6.2.1",
+            "com.codeborne:selenide:5.25.0",
             "io.qameta.allure:allure-selenide:$allureVersion",
-            "org.junit.jupiter:junit-jupiter-api:$junitVersion",
-            "com.github.javafaker:javafaker:1.0.2"
-    )
+            "org.junit.jupiter:junit-jupiter-api:$junitVersion")
     testRuntimeOnly(
             "org.slf4j:slf4j-simple:1.7.29",
             "org.junit.jupiter:junit-jupiter-engine:$junitVersion")
@@ -39,6 +37,10 @@ dependencies {
 
 tasks.withType(Test) {
     useJUnitPlatform()
+    systemProperties(System.getProperties())
+
+    //    systemProperty("browser", "safari")
+//    systemProperty("environment", System.getProperty("environment", "stage")) // preprod, prod, stage
 
     testLogging {
         lifecycle {
@@ -48,3 +50,10 @@ tasks.withType(Test) {
         }
     }
 }
+
+task properties_tests(type: Test) {
+    useJUnitPlatform{
+        includeTags "properties"
+    }
+}
+
