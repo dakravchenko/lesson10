@@ -23,6 +23,9 @@ public class TestBase {
         String password = System.getProperty("password");
         String url = System.getProperty("url");
         String remoteUrl = "https://" + login + ":" + password + "@" + url;
+        String browser = System.getProperty("browser", "chrome");
+        // String version = System.getProperty("version");
+        Configuration.browser = browser;
         Configuration.remote = remoteUrl;
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
